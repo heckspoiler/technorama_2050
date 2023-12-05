@@ -10,3 +10,18 @@ export const usePostsStore = create((set) => ({
     set({ wordPressPosts: posts });
   },
 }));
+
+// Function for component to fetch data from zustand store
+
+// const { wordPressPosts, setWordPressPosts, fetchWordPressPosts } =
+// usePostsStore();
+
+// useEffect(() => {
+// fetchWordPressPosts();
+// }, [fetchWordPressPosts]);
+
+// console.log('Posts from Home: ', wordPressPosts);
+
+// if (!wordPressPosts || wordPressPosts.length === 0) {
+// return <h1>Loading posts...</h1>;
+// }
