@@ -1,29 +1,30 @@
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
-const WordpressData = async function getStaticProps() {
+export async function fetchWordpressData() {
   const client = new ApolloClient({
     uri: process.env.NEXT_WORDPRESS_ENDPOINT,
     cache: new InMemoryCache(),
   });
 
-  const { data } = await client.query({
+  const data = await client.query({
     query: gql`
-      query getPosts {
-        post(id: "1") {
-          date
-          content(format: RAW)
+      query getPost($id: ID = "", $authorName: String = "") {
+        pages(first: 10) {
+          nodes {
+            authorId
+          }
+        }
+        post(asPreview: true) {
+          author {
+            node {
+              username
+            }
+          }
         }
       }
     `,
   });
 
   console.log(data);
-
-  return {
-    props: {
-      posts: data.posts.nodes,
-    },
-  };
-};
-
-export default WordpressData;
+  return data.pages.nodes.authorId;
+}

@@ -1,3 +1,9 @@
-export default function Home() {
-  return <div></div>;
+import Home from './home/page';
+
+export default function App({ posts }) {
+  return (
+    <>
+      <Home />
+    </>
+  );
 }
