@@ -3,9 +3,10 @@ import { fetchWordpressData } from '@/utils/api';
 
 export const usePostsStore = create((set) => ({
   wordPressPosts: [],
-  setWordPressPosts: (posts) => set({ posts }),
+  setWordPressPosts: (posts) => set({ wordPressPosts: posts }),
   fetchWordPressPosts: async () => {
     const posts = await fetchWordpressData();
-    set({ posts });
+    console.log('Posts from Store:', posts);
+    set({ wordPressPosts: posts });
   },
 }));

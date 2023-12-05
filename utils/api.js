@@ -1,38 +1,9 @@
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import axios from 'axios';
 
 export async function fetchWordpressData() {
-  const client = new ApolloClient({
-    uri: process.env.NEXT_WORDPRESS_ENDPOINT,
-    cache: new InMemoryCache(),
-  });
-
-  try {
-    const { data } = await client.query({
-      query: gql`
-        query getPost($id: ID = "", $authorName: String = "") {
-          pages(first: 10) {
-            nodes {
-              authorId
-            }
-          }
-          post(asPreview: true) {
-            author {
-              node {
-                username
-              }
-            }
-          }
-        }
-      `,
-    });
-
-    console.log(data);
-    // Assuming you want to return the authorIds of the pages
-    return data.pages.nodes.map((node) => node.authorId);
-  } catch (error) {
-    console.error('Error fetching WordPress data:', error);
-    // Handle the error based on your application's needs
-    // For example, you might want to return null or an empty array
-    return null;
-  }
+  const response = await axios.get(
+    'http://technorama2050.local/wp-json/wp/v2/posts'
+  );
+  console.log(response.data);
+  return response.data;
 }
