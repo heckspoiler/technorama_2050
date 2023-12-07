@@ -8,20 +8,20 @@ import { ThirdSection } from '@/components/home/thirdSection/thirdSection';
 import styles from './home.module.css';
 
 export default function Home() {
-  const { wordPressPosts, setWordPressPosts, fetchWordPressPosts } =
-    usePostsStore();
+  // const { wordPressPosts, setWordPressPosts, fetchWordPressPosts } =
+  //   usePostsStore();
 
-  useEffect(() => {
-    fetchWordPressPosts();
-  }, [fetchWordPressPosts]);
+  // useEffect(() => {
+  //   fetchWordPressPosts();
+  // }, [fetchWordPressPosts]);
 
-  if (!wordPressPosts || wordPressPosts.length === 0) {
-    return <h1>Loading posts...</h1>;
-  }
+  // if (!wordPressPosts || wordPressPosts.length === 0) {
+  //   return <h1>Loading posts...</h1>;
+  // }
 
   return (
     <div className={styles.mainContainer}>
-      <h1 className={styles.mainTitle}>Posts</h1>
+      {/* <h1 className={styles.mainTitle}>Posts</h1>
       {wordPressPosts.map((post) => (
         <div key={post.id}>
           <h2>{post.title.rendered}</h2>
@@ -29,8 +29,7 @@ export default function Home() {
           <div>{post.id}</div>
           <div>{post.categories}</div>
         </div>
-      ))}
-
+      ))} */}
       <FirstSection />
       <SecondSection />
       <ThirdSection />

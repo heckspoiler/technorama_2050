@@ -2,5 +2,5 @@ import React from 'react';
 import styles from './secondSection.module.css';
 
 export const SecondSection = () => {
-  return <div>SecondSection</div>;
+  return <div className={styles.secondContainer}>SecondSection</div>;
 };
