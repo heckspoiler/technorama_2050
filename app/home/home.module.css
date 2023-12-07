@@ -2,3 +2,15 @@
     font-size: 20rem;
     letter-spacing: -40px;
 }
+
+
+#svgShape {
+    d: path("M0,0 H703 V184 H0 Z");
+    /* Initial rectangle shape */
+    transition: d 2s ease;
+}
+
+#svgShape:hover {
+    d: path("M351.5,92 C351.5,142.675 271.75,184 176.75,184 C81.75,184 2,142.675 2,92 C2,41.325 81.75,0 176.75,0 C271.75,0 351.5,41.325 351.5,92 Z");
+    /* Ellipse shape on hover */
+}
