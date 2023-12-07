@@ -1,6 +1,6 @@
 .svgBackground {
     z-index: -1000;
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    position: fixed;
+    height: 100vh !important;
+    width: 100vw !important;
 }

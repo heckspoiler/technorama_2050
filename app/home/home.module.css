@@ -4,6 +4,9 @@
     width: 100vw;
     max-width: 1500px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+
 }
 
 

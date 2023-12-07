@@ -1,19 +1,37 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import styles from './svgBackground.module.css';
 
 export const SvgBackground = () => {
+  const [rotation, setRotation] = useState(0);
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const newRotation = scrollY / 10;
+    setRotation(newRotation);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <svg
       className={styles.svgBackground}
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
-      viewBox="0 0 700 700"
-      width="700"
-      height="700"
+      viewBox="0 0 100% 100%"
+      width="100%"
+      height="100%"
     >
       <defs>
         <linearGradient
-          gradientTransform="rotate(-92, 0.5, 0.5)"
+          gradientTransform={`rotate(${rotation}, 0.5, 0.5)`}
           x1="50%"
           y1="0%"
           x2="50%"
@@ -21,14 +39,10 @@ export const SvgBackground = () => {
           id="gggrain-gradient2"
         >
           <stop stopColor="#e0de13" stopOpacity="1" offset="0%"></stop>
-          <stop
-            stopColor="rgba(255,255,255,0)"
-            stopOpacity="0"
-            offset="100%"
-          ></stop>
+          <stop stopColor="#BAE3E5" stopOpacity="1" offset="100%"></stop>
         </linearGradient>
         <linearGradient
-          gradientTransform="rotate(92, 0.5, 0.5)"
+          gradientTransform={`rotate(${rotation}, 0.5, 0.5)`}
           x1="50%"
           y1="0%"
           x2="50%"
@@ -37,9 +51,9 @@ export const SvgBackground = () => {
         >
           <stop stopColor="#BAE3E5" stopOpacity="1"></stop>
           <stop
-            stopColor="rgba(255,255,255,0)"
-            stopOpacity="0"
-            offset="100%"
+            stopColor="#BAE3E5"
+            stopOpacity="1"
+            offset={`${rotation}%`}
           ></stop>
         </linearGradient>
         <filter
@@ -54,7 +68,7 @@ export const SvgBackground = () => {
         >
           <feTurbulence
             type="fractalNoise"
-            baseFrequency="1.25"
+            baseFrequency="1.8"
             numOctaves="2"
             seed="2"
             stitchTiles="stitch"
@@ -88,7 +102,7 @@ export const SvgBackground = () => {
           height="100%"
           fill="transparent"
           filter="url(#gggrain-filter)"
-          opacity="0.27"
+          opacity={0.33}
           style={{ mixBlendMode: 'normal' }}
         ></rect>
       </g>
