@@ -10,6 +10,7 @@ const Header = () => {
       <Link href="/home">
         <Logo />
       </Link>
+      <div className={styles.stroke}></div>
       <DonateButton />
     </header>
   );
