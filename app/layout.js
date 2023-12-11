@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import Header from '../components/header/header';
 import './globals.css';
+import { SvgBackground } from '@/components/home/svgBackground/svgBackground';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Header />
+        <SvgBackground />
         {children}
       </body>
     </html>

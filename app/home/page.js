@@ -5,7 +5,7 @@ import { usePostsStore } from '../../stores/postStore';
 import { FirstSection } from '@/components/home/firstSection/FirstSection';
 import { SecondSection } from '@/components/home/secondSection/SecondSection';
 import { ThirdSection } from '@/components/home/thirdSection/thirdSection';
-import { SvgBackground } from '@/components/home/svgBackground/svgBackground';
+
 import styles from './home.module.css';
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
           <div>{post.categories}</div>
         </div>
       ))} */}
-      <SvgBackground />
+
       <FirstSection />
       <SecondSection />
       <ThirdSection />
