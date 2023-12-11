@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './secondSection.module.css';
 
 export const SecondSection = () => {
-  const [isSticky, setSticky] = useState(false); // Renamed from isFixed to isSticky
+  const [isSticky, setSticky] = useState(false);
 
   const checkSticky = () => {
     const headerHeight = 6 * 16; // 6rem in pixels
@@ -20,7 +20,7 @@ export const SecondSection = () => {
     return () => {
       window.removeEventListener('scroll', checkSticky);
     };
-  }, [checkSticky]);
+  }, []);
 
   return (
     <div

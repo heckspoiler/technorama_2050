@@ -6,7 +6,7 @@
 }
 
 .sticky {
-    position: sticky;
+    position: fixed !important;
     top: 6rem;
     left: 0;
     width: 100%;

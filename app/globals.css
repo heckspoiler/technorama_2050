@@ -50,7 +50,9 @@ body {
   overflow-x: hidden;
 }
 
-body {}
+body {
+  cursor: none;
+}
 
 a {
   color: inherit;
