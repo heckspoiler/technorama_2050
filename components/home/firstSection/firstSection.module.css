@@ -1,0 +1,40 @@
+.firstContainer {
+    height: calc(92vh);
+    width: 100%;
+    z-index: -1;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+}
+
+.heroContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+
+}
+
+
+.twentyfifty {
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.twentyfifty h1 {
+    font-size: 13rem;
+}
+
+.twentyfifty h1:nth-of-type(2) {
+    transform: translateY(-12vh)
+}
