@@ -5,8 +5,8 @@ import CustomCursor from '@/components/general/cursor/cursor';
 export default function App({ posts }) {
   return (
     <>
-      <CustomCursor />
       <SvgBackground />
+      <CustomCursor />
       <Home />
     </>
   );

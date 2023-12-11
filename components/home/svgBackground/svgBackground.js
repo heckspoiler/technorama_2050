@@ -9,7 +9,7 @@ export const SvgBackground = () => {
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
-    const newRotation = scrollY / 10;
+    const newRotation = scrollY / 100;
     const newOpacity = scrollY / 1000;
     setRotation(newRotation);
     setOpacity((prevOpacity) => {

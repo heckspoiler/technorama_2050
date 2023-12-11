@@ -12,6 +12,12 @@
   :root {}
 }
 
+::-webkit-scrollbar-track {
+  background: #e0de13 !important;
+  /* Track background color */
+  /* Add more styling as needed */
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
