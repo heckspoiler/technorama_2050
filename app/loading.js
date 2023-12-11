@@ -1,6 +1,7 @@
+'use client';
 import React from 'react';
 
-export const Loading = () => {
+const Loading = () => {
   return (
     <main>
       <h1>Loading...</h1>
@@ -8,3 +9,5 @@ export const Loading = () => {
     </main>
   );
 };
+
+export default Loading;
