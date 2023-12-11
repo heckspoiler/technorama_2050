@@ -1,0 +1,7 @@
+.firstContainer {
+    height: calc(92vh);
+    width: 100%;
+    z-index: -1;
+    margin-top: 6rem;
+
+}
