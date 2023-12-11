@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google';
 import Header from '../components/header/header';
 import './globals.css';
 import { SvgBackground } from '@/components/home/svgBackground/svgBackground';
+import CustomCursor from '@/components/general/cursor/cursor';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <CustomCursor />
         <Header />
         <SvgBackground />
         {children}

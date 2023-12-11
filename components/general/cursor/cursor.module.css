@@ -4,37 +4,19 @@
     border-radius: 50%;
     position: fixed;
     z-index: 100;
-    border: 1px solid var(--project-black);
-    backdrop-filter: invert(60%)
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0.5px, transparent 0.5px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0.5px, transparent 0.5px),
+        rgba(255, 255, 255, 0.1);
+    background-size: 5px 5px;
+    ;
+    backdrop-filter: contrast(188%) hue-rotate(246deg) invert(100%) saturate(300%) sepia(41%);
+    transition: scale 0.2s ease-in-out;
 }
 
-/* .cursor::after {
-    content: "";
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    border: 2px solid blue;
-    border-radius: 50%;
-    opacity: .5;
-    top: -8px;
-    left: -8px;
-} */
 
-@keyframes cursorAnim {
-    0% {
-        transform: scale(1);
-    }
 
-    50% {
-        transform: scale(5);
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 0;
-    }
-}
 
 .expand {
-    animation: cursorAnim .5s forwards;
+    transform: scale(1.1);
 }

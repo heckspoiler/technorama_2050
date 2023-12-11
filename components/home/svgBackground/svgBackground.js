@@ -29,7 +29,7 @@ export const SvgBackground = () => {
     };
   }, []);
 
-  console.log('rotation', rotation, 'opacity', opacity);
+  // console.log('rotation', rotation, 'opacity', opacity);
 
   return (
     <svg

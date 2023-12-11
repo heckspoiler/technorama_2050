@@ -7,7 +7,7 @@ import styles from './header.module.css';
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Link href="www.google.ch">
+      <Link href="/home">
         <Logo />
       </Link>
       <DonateButton />

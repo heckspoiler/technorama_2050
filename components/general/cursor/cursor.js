@@ -7,34 +7,42 @@ export default function CustomCursor() {
   const cursorRef = useRef(null);
 
   const moveCursor = (e) => {
-    const { pageX, pageY } = e;
+    const { clientX, clientY } = e;
     if (cursorRef.current) {
-      cursorRef.current.style.top = `${pageY}px`;
-      cursorRef.current.style.left = `${pageX}px`;
+      cursorRef.current.style.top = `${clientY}px`;
+      cursorRef.current.style.left = `${clientX}px`;
     }
   };
 
-  const clickEffect = () => {
+  const onMouseEnter = () => {
     if (cursorRef.current) {
-      cursorRef.current.classList.add('expand');
-      setTimeout(() => {
-        cursorRef.current?.classList.remove('expand');
-      }, 500);
+      cursorRef.current.classList.add(styles.cursorExpanded);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (cursorRef.current) {
+      cursorRef.current.classList.remove(styles.cursorExpanded);
     }
   };
 
   useEffect(() => {
-    // Only add event listeners in a browser environment
     if (typeof window !== 'undefined') {
       document.addEventListener('mousemove', moveCursor);
-      document.addEventListener('click', clickEffect);
-    }
+      const linksAndButtons = document.querySelectorAll('a, button');
+      linksAndButtons.forEach((elem) => {
+        elem.addEventListener('mouseenter', onMouseEnter);
+        elem.addEventListener('mouseleave', onMouseLeave);
+      });
 
-    // Cleanup function
-    return () => {
-      document.removeEventListener('mousemove', moveCursor);
-      document.removeEventListener('click', clickEffect);
-    };
+      return () => {
+        document.removeEventListener('mousemove', moveCursor);
+        linksAndButtons.forEach((elem) => {
+          elem.removeEventListener('mouseenter', onMouseEnter);
+          elem.removeEventListener('mouseleave', onMouseLeave);
+        });
+      };
+    }
   }, []);
 
   return <div className={styles.cursor} ref={cursorRef}></div>;
