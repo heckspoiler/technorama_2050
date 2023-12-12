@@ -1,0 +1,14 @@
+.splashscreenContainer {
+    height: 100vh;
+    width: 100vw;
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.splashscreenContainer h1 {
+    font-size: 5rem;
+    color: rgb(239, 239, 239);
+}
