@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {isLoading && isHome ? (
-          <Splashscreen />
+          <Splashscreen finishLoading={() => setIsLoading(false)} />
         ) : (
           <>
             <CustomCursor />
