@@ -1,0 +1,42 @@
+.navbar {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transform: translateY(85vh);
+    left: 0;
+    padding: 0 4vw;
+}
+
+.navigationLink {
+    text-transform: uppercase;
+    border: 1px solid black;
+    font-size: 0.8rem;
+    width: calc(3rem + 8vw);
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    transition: background 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.navigationLink:hover {
+    text-transform: uppercase;
+    border: 1px solid black;
+    padding: 10px 20px;
+    background: rgb(186, 227, 229, 0.8)
+}
+
+
+.navigationLink svg {
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+.hovered {
+    transform: rotate(0deg) !important;
+}
