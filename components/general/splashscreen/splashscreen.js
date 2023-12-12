@@ -7,31 +7,33 @@ import { BackgroundSvg } from './backgroundSvg/backgroundSvg';
 import Image from 'next/image';
 
 export const Splashscreen = ({ finishLoading }) => {
+  const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
+    setIsMounted(true);
+
     anime({
       targets: '#splashSVG',
-      rotate: '1turn', // Rotate one full turn
-      duration: 3000, // Duration of the animation in milliseconds
-      easing: 'easeOutExpo', // Easing function for a smooth effect
+      rotate: '1turn',
+      duration: 3000,
+      easing: 'easeOutExpo',
       complete: () => {
-        // Delay for a specified time before calling finishLoading
-        setTimeout(() => {
-          finishLoading();
-        }, 2000); // Delay of 2000 milliseconds (2 seconds)
+        anime({
+          targets: '#splashScreen',
+          opacity: 0,
+          duration: 1000,
+          easing: 'easeInOutQuad',
+          complete: () => {
+            finishLoading();
+          },
+        });
       },
     });
   }, []);
 
   return (
     <div className={styles.splashscreenContainer} id="splashScreen">
-      <BackgroundSvg />
-      <Image
-        src="/images/home/hero_sketch.png"
-        width={1405 / 1.8}
-        height={556 / 1.8}
-        alt="Technorama 2050 Hero Sketch"
-        className={styles.heroSketch}
-      />
+      {/* <BackgroundSvg /> */}
+
       <h1>TECHNORAMA 2050</h1>
       <h2>THE FUTURE IS NOW</h2>
       {/* <svg
