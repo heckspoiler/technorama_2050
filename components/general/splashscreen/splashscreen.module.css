@@ -1,21 +1,30 @@
 .splashscreenContainer {
     height: 100vh;
     width: 100vw;
-    background: rgb(238, 174, 202);
-    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    /* background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%); */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
 
 .splashscreenContainer h1 {
     font-size: 5rem;
-    color: rgb(239, 239, 239);
+
 }
 
 .splashscreenContainer svg {
     scale: 0.8
+}
+
+.heroSketch {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1
 }
 
 .ball {
@@ -25,21 +34,24 @@
     margin: 0;
     border-radius: 50%;
     position: relative;
-    background: radial-gradient(circle at 50% 120%, transparent, #fff 80%, #e445de 100%);
-    animation: ballRotate 3s ease-in-out;
+    background: radial-gradient(circle at 50% 120%, transparent, #fff 80%, #f095ed 100%);
+    animation: ballRotate 3s cubic-bezier(.28, .48, .24, 1.02);
 }
 
 @keyframes ballRotate {
     0% {
-        transform: rotate(0deg)
+        transform: rotate(0deg);
+        scale: 1
+    }
+
+    50% {
+        transform: rotate(180deg);
+        scale: 1.1;
     }
 
     0% {
-        transform: rotate(180deg)
-    }
-
-    0% {
-        transform: rotate(360deg)
+        transform: rotate(360deg);
+        scale: 1;
     }
 }
 
@@ -78,7 +90,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+    background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
     -webkit-transform: rotateX(90deg) translateZ(-150px);
     -moz-transform: rotateX(90deg) translateZ(-150px);
     -ms-transform: rotateX(90deg) translateZ(-150px);

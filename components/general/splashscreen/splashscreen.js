@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import anime from 'animejs';
 import styles from './splashscreen.module.css';
+import { BackgroundSvg } from './backgroundSvg/backgroundSvg';
+import Image from 'next/image';
 
 export const Splashscreen = ({ finishLoading }) => {
   useEffect(() => {
@@ -22,6 +24,14 @@ export const Splashscreen = ({ finishLoading }) => {
 
   return (
     <div className={styles.splashscreenContainer} id="splashScreen">
+      <BackgroundSvg />
+      <Image
+        src="/images/home/hero_sketch.png"
+        width={1405 / 1.8}
+        height={556 / 1.8}
+        alt="Technorama 2050 Hero Sketch"
+        className={styles.heroSketch}
+      />
       <h1>TECHNORAMA 2050</h1>
       <h2>THE FUTURE IS NOW</h2>
       {/* <svg

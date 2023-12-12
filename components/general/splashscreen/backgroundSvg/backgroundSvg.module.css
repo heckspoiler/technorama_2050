@@ -1,0 +1,8 @@
+.backgroundSvg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100% !important;
+    width: 100% !important;
+    z-index: -2;
+}
